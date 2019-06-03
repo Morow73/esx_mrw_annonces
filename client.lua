@@ -30,6 +30,7 @@ Citizen.CreateThread(function()
 		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 		Citizen.Wait(0)
 	end
+	
 end)
 
 
@@ -47,14 +48,6 @@ AddEventHandler('esx_mrw_annonces:hasExitedMarker', function(zone)
 
 	CurrentAction = nil
 end)
-
-
-AddEventHandler('onResourceStart', function(resource)
-
-  blips()
-
-end)
-
 
 Citizen.CreateThread(function()
 	while true do
@@ -155,7 +148,7 @@ AddEventHandler('esx_mrw_annonces:ToAnnonces', function(result)
 end)
 
 
-function blips()
+Citizen.CreateThread(function()
 
 	local blip = AddBlipForCoord(Config.Zones.Annonces.Pos.x, Config.Zones.Annonces.Pos.y, Config.Zones.Annonces.Pos.z)
 	SetBlipSprite (blip, 184)
@@ -168,5 +161,5 @@ function blips()
 	AddTextComponentString("Annonces")
 	EndTextCommandSetBlipName(blip)
 
-end
+end)
  
