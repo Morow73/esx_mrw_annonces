@@ -1,5 +1,5 @@
 fx_version 'adamant'
-games 'gta5'
+game 'gta5'
 description 'ESX_Mrw_Annonces'
 
 author 'Morow'
